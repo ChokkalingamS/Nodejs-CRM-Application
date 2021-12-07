@@ -64,7 +64,8 @@ async function updateemployee(userdata)
     return result;
 }
 
-export{passwordGenerator,
+export
+   {passwordGenerator,
     getuser,
    createuser,
    passwordUpdate,
