@@ -77,7 +77,7 @@ router.route("/forgotpassword").post(async (request, response) => {
       .send({ msg: "Invalid login credentials : mailid" });
   }
   const token = jwt.sign({ id: data._id }, process.env.key);
-  const link = `http://localhost:3000/forgotpassword/verify/${token}`;
+  const link = `https://crm-application.netlify.app/forgotpassword/verify/${token}`;
   const replacePassword = await passwordUpdate({ Mailid, token });
   // console.log(replacePassword);
   let updatedResult = await getuser({ Mailid });
@@ -187,7 +187,7 @@ router.route("/employeeforgotpassword").post(async (request, response) => {
         .send({ msg: "Invalid login credentials : mailid" });
     }
     const token = jwt.sign({ id: data._id }, process.env.key);
-    const link = `http://localhost:3000/employeeforgotpassword/verify/${token}`;
+    const link = `https://crm-application.netlify.app/employeeforgotpassword/verify/${token}`;
     const replacePassword = await employeepasswordUpdate({ Mailid, token });
     let updatedResult = await getemployee({ Mailid });
   
